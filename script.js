@@ -19,6 +19,7 @@ if(rivalChoice <= 0.33){
 } else {
   rivalChoice = "Squirtle";
 } console.log("Rival Choice is: " + rivalChoice);
+document.getElementById('displayRivalPokemon').innerHTML = '<p>' + "Your rival chose " + rivalChoice + "!" +'</p>';
 
 var compare = function(choice1, choice2){
   if(choice1 === choice2){
@@ -27,25 +28,31 @@ var compare = function(choice1, choice2){
   } else if(choice1 === "Bulbasaur"){
     if(choice2 === "Charmander"){
       console.log("Charmander is the winner!");
+      document.getElementById('winner').innerHTML = '<p>' + "Charmander is the winner!" + '<p>';
       return "Charmander is the winner!"
     } else {
       console.log("Bulbasaur is the winner!");
+      document.getElementById('winner').innerHTML = '<p>' + "Bulbasaur is the winner!" + '<p>';
       return "Bulbasaur is the winner!"
     }
   } else if(choice1 === "Charmander"){
     if(choice2 === "Bulbasaur"){
       console.log("Charmander is the winner!");
+      document.getElementById('winner').innerHTML = '<p>' + "Charmander is the winner!" + '<p>';
       return "Charmander is the winner!"
     } else {
       console.log("Squirtle is the winner!");
+      document.getElementById('winner').innerHTML = '<p>' + "Squirtle is the winner!" + '<p>';
       return "Squirtle is the winner!"
     }
   } else if(choice1 === "Squirtle"){
     if(choice2 === "Charmander"){
       console.log("Squirtle is the winner!");
+      document.getElementById('winner').innerHTML = '<p>' + "Squirtle is the winner!" + '<p>';
       return "Squirtle is the winner"
     } else {
       console.log("Bulbasaur is the winner!");
+      document.getElementById('winner').innerHTML = '<p>' + "Bulbasaur is the winner!" + '<p>';
       return "Bulbasaur is the winner!"
     }
   }
