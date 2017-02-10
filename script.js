@@ -26,32 +26,42 @@ $(document).ready(function(){
 
   var userChoice
   function appendBulbasaur() {
-    userChoice = starterPokemon[0].name;
-    console.log(userChoice);
     $("#displayPokemonChosen").text("You chose the " + starterPokemon[0].type + " type Pokemon, " + starterPokemon[0].name + "!")
   }
 
   function appendCharmander() {
-    userChoice = starterPokemon[1].name;
-    console.log(userChoice);
     $("#displayPokemonChosen").text("You chose the " + starterPokemon[1].type + " type Pokemon, " + starterPokemon[1].name + "!")
   }
 
   function appendSquirtle() {
-    userChoice = starterPokemon[2].name
-    console.log(userChoice);
     $("#displayPokemonChosen").text("You chose the " + starterPokemon[2].type + " type Pokemon, " + starterPokemon[2].name + "!")
   }
 
+  //Decides which button the user clicked on
+  $('#choseBulbasaur').on('click', function(){
+    var userChoice = $(this).parent().attr("id");
+    if(userChoice == "Bulbasaur"){
+      appendBulbasaur();
+      console.log("You chose: " + userChoice);
+    };
+  });
 
-  // var userChoice = prompt("Do you choose Bulbasaur, Charmander or Squirtle?"); //prompt the user to enter rock, paper, or scissors
-  // console.log("User choice is: " + userChoice);
-  //  var pokemon = function(){
-  //    console.log("in userChoice function");
-  //    var userChoice =
-  //    console.log("User choice is: " + userChoice);
-  //
-  //
+  $('#choseCharmander').on('click', function(){
+    var userChoice = $(this).parent().attr("id");
+    if(userChoice == "Charmander"){
+      appendCharmander();
+      console.log("You chose: " + userChoice);
+    };
+  });
+
+  $('#choseSquirtle').on('click', function(){
+    var userChoice = $(this).parent().attr("id");
+    if(userChoice == "Squirtle"){
+      appendSquirtle();
+      console.log("You chose: " + userChoice);
+    };
+  });
+
   var rivalChoice
   function rivalChose(){
     rivalChoice = Math.random(); //Have the computer generate a random number
@@ -69,37 +79,39 @@ $(document).ready(function(){
     console.log("arena clicked");
     return rivalChose();
   });
-// return rivalChose(); //makes rivalChoice appear on DOM
-// var compare = function(choice1, choice2){
-//   if(choice1 === choice2){
-//     console.log("The battle is a draw!")
-//     return "The battle is a draw!"
-//   } else if(choice1 === "Bulbasaur"){
-//     if(choice2 === "Charmander"){
-//       console.log("Charmander is the winner!");
-//       return "Charmander is the winner!"
-//     } else {
-//       console.log("Bulbasaur is the winner!");
-//       return "Bulbasaur is the winner!"
-//     }
-//   } else if(choice1 === "Charmander"){
-//     if(choice2 === "Bulbasaur"){
-//       console.log("Charmander is the winner!");
-//       return "Charmander is the winner!"
-//     } else {
-//       console.log("Squirtle is the winner!");
-//       return "Squirtle is the winner!"
-//     }
-//   } else if(choice1 === "Squirtle"){
-//     if(choice2 === "Charmander"){
-//       console.log("Squirtle is the winner!");
-//       return "Squirtle is the winner"
-//     } else {
-//       console.log("Bulbasaur is the winner!");
-//       return "Bulbasaur is the winner!"
-//     }
-//   }
-// };
-// compare(userChoice, rivalChoice);
-// };
+  console.log(userChoice);
+  console.log(rivalChoice);
+  // return rivalChose(); //makes rivalChoice appear on DOM
+  // var compare = function(choice1, choice2){
+  //   if(choice1 === choice2){
+  //     console.log("The battle is a draw!")
+  //     return "The battle is a draw!"
+  //   } else if(choice1 === "Bulbasaur"){
+  //     if(choice2 === "Charmander"){
+  //       console.log("Charmander is the winner!");
+  //       return "Charmander is the winner!"
+  //     } else {
+  //       console.log("Bulbasaur is the winner!");
+  //       return "Bulbasaur is the winner!"
+  //     }
+  //   } else if(choice1 === "Charmander"){
+  //     if(choice2 === "Bulbasaur"){
+  //       console.log("Charmander is the winner!");
+  //       return "Charmander is the winner!"
+  //     } else {
+  //       console.log("Squirtle is the winner!");
+  //       return "Squirtle is the winner!"
+  //     }
+  //   } else if(choice1 === "Squirtle"){
+  //     if(choice2 === "Charmander"){
+  //       console.log("Squirtle is the winner!");
+  //       return "Squirtle is the winner"
+  //     } else {
+  //       console.log("Bulbasaur is the winner!");
+  //       return "Bulbasaur is the winner!"
+  //     }
+  //   }
+  // };
+  // compare(userChoice, rivalChoice);
+  // };
 }); //end document ready
