@@ -23,6 +23,7 @@ $(document).ready(function(){
   console.log(starterPokemon);
 
   //displays pokemon that you chose when called
+
   var userChoice
   function appendBulbasaur() {
     userChoice = starterPokemon[0].name;
@@ -64,7 +65,11 @@ $(document).ready(function(){
     } $("#displayRivalPokemon").text("Your rival chose " + rivalChoice + "!")
     console.log("Rival Choice is: " + rivalChoice);
   }//end rivalChose
-return rivalChose();
+  $('.arena').on('click', function(){
+    console.log("arena clicked");
+    return rivalChose();
+  });
+// return rivalChose(); //makes rivalChoice appear on DOM
 // var compare = function(choice1, choice2){
 //   if(choice1 === choice2){
 //     console.log("The battle is a draw!")
