@@ -62,7 +62,7 @@ $(document).ready(function(){
     };
   });
 
-  var rivalChoice
+  var rival = rivalChose();
   function rivalChose(){
     rivalChoice = Math.random(); //Have the computer generate a random number
     console.log("Rival choice is", rivalChoice); //We got our number, but it's just a number right now. Let's make it a pokemon!
@@ -74,13 +74,10 @@ $(document).ready(function(){
       rivalChoice = "Squirtle";
     } $("#displayRivalPokemon").text("Your rival chose " + rivalChoice + "!")
     console.log("Rival Choice is: " + rivalChoice);
+    return rivalChoice;
   }//end rivalChose
-  $('.arena').on('click', function(){
-    console.log("arena clicked");
-    return rivalChose();
-  });
   console.log(userChoice);
-  console.log(rivalChoice);
+  console.log(rival);
   // return rivalChose(); //makes rivalChoice appear on DOM
   // var compare = function(choice1, choice2){
   //   if(choice1 === choice2){
